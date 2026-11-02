@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Ego-Garten Tycoon</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="ui-container">
+        <div class="ui-stat">💰 Münzen: <span id="coins-display">20</span></div>
+        <div class="ui-stat">🎒 Inventar: <span id="inv-display">Keine</span></div>
+        <div class="ui-stat">🌱 Ausgewählt: <span id="holding-display">Leere Hände</span></div>
+    </div>
+
+    <div id="canvas-container">
+        <canvas id="gameCanvas" width="640" height="400"></canvas>
+        <div id="crosshair"></div>
+        <div id="action-prompt">Drücke E zum Interagieren</div>
+        
+        <!-- Shop-Menü Popup -->
+        <div id="shop-modal">
+            <h3>🏡 Samen-Händler</h3>
+            <div class="shop-item">
+                <span>🍅 Tomaten-Samen (Preis: 5)</span>
+                <button class="shop-btn" onclick="buySeed('Tomato', 5)">Kaufen</button>
+            </div>
+            <div class="shop-item">
+                <span>🎃 Kürbis-Samen (Preis: 10)</span>
+                <button class="shop-btn" onclick="buySeed('Pumpkin', 10)">Kaufen</button>
+            </div>
+            <button class="shop-btn" id="close-shop" onclick="toggleShop(false)">Shop Verlassen</button>
+        </div>
+    </div>
+
+    <div id="instructions">
+        <b>W / A / S / D</b> oder <b>Pfeiltasten</b> zum Bewegen & Umschauen. <br>
+        Drücke <b>P</b> um den Shop zu öffnen/schließen. <br>
+        Drücke <b>E</b> um Samen zu pflanzen oder reife Pflanzen zu ernten!
+    </div>
+
+    <!-- Einbindung der Logik -->
+    <script src="game.js"></script>
+</body>
+</html>
